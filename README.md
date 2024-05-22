@@ -9,9 +9,9 @@ URLs:
 
 `https://funkinextrakeys.github.io/{engine}`
   - `/{platform}`
-  - `/gb/`
-  - `/repo/` (GameBanana mod URL)
-  - `/` (Redirect to source code)
+  - `/gb/` (GameBanana mod URL)
+  - `/repo/` (Redirect to source code)
+  - `/` (Hub)
 
 Fill-ins:
 
