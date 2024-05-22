@@ -1,0 +1,8 @@
+<script>
+  urlParams = new URLSearchParams(window.location.search)
+  commitID = urlParams.get('sha')
+
+  if (commitID) {
+    document.location.href = 'https://www.github.com/FunkinExtraKeys/V-Slice-EK/tree/' + commitID + '/'
+  }
+</script>
