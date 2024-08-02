@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkin' Extra Keys</title>
+
+    <style>
+        html {
+            background: linear-gradient(to right, #ffff00, #8b4aff, #ff0000, #0033ff);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            background-color: rgba(0, 0, 0, .75);
+        }
+
+        @font-face {
+            font-family: headings;
+            src: url(https://fnlookup.github.io/assets/fonts/HeadingNow-75Medium.ttf);
+        }
+
+        h1,
+        h2,
+        p,
+        h3,
+        a,
+        ul,
+        li {
+            font-family: headings;
+            color: white;
+        }
+
+        .uploader-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+        }
+
+        .fortnite-button {
+            font-size: 23px;
+            padding: 1rem 1.5rem;
+            border-radius: 30px;
+            background-color: #f7ff19;
+            border: 0;
+            cursor: pointer;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .fortnite-button:hover {
+            background-color: #f7ff19;
+        }
+
+        .fortnite-button-border {
+            --outline-width-hover: .25rem;
+            outline-width: 0;
+            outline-color: transparent;
+            outline-offset: .5rem;
+            outline-style: solid;
+            transition-duration: .15s;
+            transition-property: outline-color, outline-offset, outline-width;
+            transition-timing-function: ease-out;
+        }
+
+        .fortnite-button-border:hover {
+            outline-color: #fffc;
+            outline-offset: .1875rem;
+            outline-width: var(--outline-width-hover);
+        }
+
+        #main {
+            max-width: 768px;
+        }
+
+        .downloads {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <img src="https://github.com/FunkinExtraKeys/FNF-PsychEngine-EK/blob/extra-keys-pe-0.7.3/assets/shared/images/newgrounds_logo.png?raw=true" alt="Extra Keys Logo">
+
+        <h1>Funkin' Extra Keys</h1>
+        <h2>FNF Engines with Extra Keys.</h2>
+        <h3 style="display: flex; align-items: center; gap: 1rem;">Produced by: <img src="https://avatars.githubusercontent.com/u/81495861?v=4" alt="tposejank" class="uploader-icon"><a href="https://github.com/tposejank/">tposejank</a></h3>
+
+        <br><br><br><br><br>
+        <h1>Psych Engine - <a id="release-version">1.0.0</a> </h1>
+        <h3 id="release-date">Today</h3>
+        <p id="release-body">BodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBody</p>
+        <div class="downloads">
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">Windows</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">MacOS</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">Linux</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">Android</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">iOS</a>
+        </div>
+
+        <br><br><br><br><br>
+        <h1>Psych Engine - <a id="release-version">0.7.3</a> </h1>
+        <h3 id="release-date">Yesterday</h3>
+        <p id="release-body">BodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBody</p>
+        <div class="downloads">
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">Windows</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">MacOS</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">Linux</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">Android OBB</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">Android DATA</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">Android EXTERNAL</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">Android MEDIA</a>
+            <a href="http://example.com" class="fortnite-button fortnite-button-border">iOS</a>
+        </div>
+
+        <br><br><br><br><br><br><br>
+    </div>
+</body>
+</html>
