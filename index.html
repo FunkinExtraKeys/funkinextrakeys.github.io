@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="shortcut icon" href="https://github.com/FunkinExtraKeys/FNF-PsychEngine-EK/blob/extra-keys-pe-0.7.3/assets/shared/images/newgrounds_logo.png?raw=true" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Funkin' Extra Keys</title>
 
     <style>
@@ -19,6 +22,7 @@
             flex-direction: column;
             margin: 0;
             background-color: rgba(0, 0, 0, .75);
+            padding: 0 1.5rem;
         }
 
         @font-face {
@@ -33,7 +37,7 @@
         a,
         ul,
         li {
-            font-family: headings;
+            font-family: 'Inter';
             color: white;
         }
 
@@ -137,15 +141,48 @@
                 for (thing of r.assets) {
                     thongs += `<a href="${thing.browser_download_url}" class="fortnite-button fortnite-button-border">${thing.name}</a>`
                 }
+                let a = marked.parse(r.body)
 
                 document.getElementById('main').innerHTML += `
                 <h1>Extra Keys - <a id="release-version">${r.tag_name}</a> </h1>
                 <h3 id="release-date">${dateThingy(new Date(r.published_at))}</h3>
-                <p id="release-body">${marked.parse(r.body)}</p>
+                <p id="release-body">${a}</p>
                 <div class="downloads">
                     
                 
                 ` + thongs + '</div>' + '<br><br><br><br><br>'
+
+                for (let child of document.getElementsByTagName('a')) {
+                    if (child.innerText.length > 'tposejanktposejank'.length) {
+                        child.innerText = child.innerText.substring(0, 'tposejanktposejank'.length) + '...';
+                    }
+                }
+
+                function replaceTextInElement(element) {
+                    const childNodes = element.childNodes;
+                    childNodes.forEach((node) => {
+                        if (node.nodeType === Node.TEXT_NODE) {
+                            const replacedText = node.nodeValue.replace(/@(\w+)/g, '<a href="https://www.github.com/$1">@$1</a>');
+                            const span = document.createElement('span');
+                            span.innerHTML = replacedText;
+                            node.parentNode.replaceChild(span, node);
+                        } else if (node.nodeType === Node.ELEMENT_NODE) {
+                            replaceTextInElement(node);
+                        }
+                    });
+                }
+
+                replaceTextInElement(document.body);
+
+                function textNodesUnder(el) {
+                    const textNodes = [];
+                    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+                    while (walker.nextNode()) {
+                        textNodes.push(walker.currentNode);
+                    }
+                    return textNodes;
+                }
+
             }).catch(e=>{
                 console.error(e);
                 console.log('oops');
